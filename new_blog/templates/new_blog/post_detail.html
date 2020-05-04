@@ -1,0 +1,20 @@
+{% extends 'new_blog/base_new_blog.html' %}
+
+{% block title %}
+    {{ post.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">
+        {{ post.title }}
+    </h1>
+    {% if post.image %}
+        <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+    {% else %}
+        <p></p>
+    {% endif %}
+    <p>
+        {{ post.body }}
+    </p>
+{% endblock %}
+

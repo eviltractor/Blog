@@ -1,0 +1,15 @@
+{% extends 'new_blog/base_new_blog.html' %}
+{% load static %}
+
+
+{% block title %}
+    Post list
+{% endblock %}
+
+{% block content %}
+    <h1 class="mb-5">Posts:</h1>
+    {% for post in page_object.object_list %}
+        {% include 'new_blog/includes/post_card_templates.html' %}
+    {% endfor %}
+
+{% endblock %}
